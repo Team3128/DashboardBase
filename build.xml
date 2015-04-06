@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Dashbored" default="run" basedir="."> 
+	<property name="JarDest" value="${user.home}/SmartDashboard/extensions"/>
+	<property name="JarName" value="Dashbored.jar"/>
+	<property name="DashboardJar" value="${user.home}/wpilib/tools/SmartDashboard.jar"/>
+	
+  	<target name="run" depends="install-jar">
+    	<echo>"Launching SmartDashboard..."</echo>
+  		<java jar="${DashboardJar}" fork="true"/>
+  	</target>
+	
+	<!-- the jar has to get copied to %userprofile%\SmardDashboard\extensions for the SmartDashboard to see it, 
+		a fact which is documented absolutely nowhere as far as I can tell. -->
+	<target name="install-jar" depends="build-jar">
+		<echo>"Installing Jar to ${JarDest}"</echo>
+		<copy overwrite="true" file="install/${JarName}" todir="${JarDest}"/>
+	</target>
+	
+	<target name="build-jar" depends="compile">
+		<echo>"Building Jar..."</echo>
+		<!-- build jar file -->
+		<mkdir dir="install"/>
+		<jar jarfile="install/${JarName}" basedir="bin"/>
+	</target>
+	
+	<target name="compile">
+		<!-- build class files -->
+		<mkdir dir="bin"/>
+		<javac srcdir="src" destdir="bin" includeantruntime="false"/>
+	</target>
+	
+	<target name="clean">
+		<!-- remove temporary directories -->
+		<delete dir="bin"/>
+		<delete dir="install"/>
+	</target>
+</project>
