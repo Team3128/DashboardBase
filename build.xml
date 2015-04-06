@@ -10,6 +10,14 @@
   		<java jar="${DashboardJar}" fork="true"/>
   	</target>
 	
+  	<target name="debug" depends="install-jar">
+    	<echo>"Launching SmartDashboard in Debug Mode..."</echo>
+  		<java jar="${DashboardJar}" fork="true">
+  		  <jvmarg value="-Xdebug" />
+  		  <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5432" />
+  		</java>
+  	</target>
+	
 	<!-- the jar has to get copied to %userprofile%\SmardDashboard\extensions for the SmartDashboard to see it, 
 		a fact which is documented absolutely nowhere as far as I can tell. -->
 	<target name="install-jar" depends="build-jar">
@@ -32,7 +40,7 @@
 	<target name="compile">
 		<!-- build class files -->
 		<mkdir dir="bin"/>
-		<javac srcdir="src" destdir="bin" classpath="${classpath}" includeantruntime="false"/>
+		<javac srcdir="src" debug="true" debuglevel="lines,vars" destdir="bin" classpath="${classpath}" includeantruntime="false"/>
 	</target>
 	
 	<target name="clean">
