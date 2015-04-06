@@ -3,6 +3,7 @@
 	<property name="JarDest" value="${user.home}/SmartDashboard/extensions"/>
 	<property name="JarName" value="Dashbored.jar"/>
 	<property name="DashboardJar" value="${user.home}/wpilib/tools/SmartDashboard.jar"/>
+	<property name="classpath" value="lib/SmartDashboard.jar"/>
 	
   	<target name="run" depends="install-jar">
     	<echo>"Launching SmartDashboard..."</echo>
@@ -20,13 +21,18 @@
 		<echo>"Building Jar..."</echo>
 		<!-- build jar file -->
 		<mkdir dir="install"/>
-		<jar jarfile="install/${JarName}" basedir="bin"/>
+		<jar jarfile="install/${JarName}" basedir="bin">
+			<!-- copy images into jar -->
+	        <fileset dir="src">
+	            <include name="org/team3128/dashbored/images/*.png" />
+	        </fileset>
+		</jar>
 	</target>
 	
 	<target name="compile">
 		<!-- build class files -->
 		<mkdir dir="bin"/>
-		<javac srcdir="src" destdir="bin" includeantruntime="false"/>
+		<javac srcdir="src" destdir="bin" classpath="${classpath}" includeantruntime="false"/>
 	</target>
 	
 	<target name="clean">
