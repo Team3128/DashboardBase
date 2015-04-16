@@ -25,7 +25,7 @@ public class HeaderImage extends StaticWidget
 	@Override
 	public void init()
 	{
-		headerIcon = new ImageIcon(getClass().getClassLoader().getResource("org/team3128/dashbored/images/header.png"));
+		headerIcon = new ImageIcon(getClass().getClassLoader().getResource("org/yourteam/smartdashboard/images/header.png"));
 		headerLabel = new JLabel(headerIcon);
 		
 		add(headerLabel);

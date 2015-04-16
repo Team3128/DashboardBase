@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Dashbored" default="run" basedir="."> 
 	<property name="JarDest" value="${user.home}/SmartDashboard/extensions"/>
-	<property name="JarName" value="Dashbored.jar"/>
+	<property name="JarName" value="DashboardBasePlugin.jar"/>
 	<property name="DashboardJar" value="${user.home}/wpilib/tools/SmartDashboard.jar"/>
 	<property name="classpath" value="lib/SmartDashboard.jar"/>
 	
@@ -18,7 +18,7 @@
   		</java>
   	</target>
 	
-	<!-- the jar has to get copied to %userprofile%\SmardDashboard\extensions for the SmartDashboard to see it, 
+	<!-- the jar has to get copied to %userprofile%\SmartDashboard\extensions for the SmartDashboard to see it, 
 		a fact which is documented absolutely nowhere as far as I can tell. -->
 	<target name="install-jar" depends="build-jar">
 		<echo>"Installing Jar to ${JarDest}"</echo>
