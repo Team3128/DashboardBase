@@ -1,4 +1,4 @@
-package org.yourteam.smartdashboard.widets;
+package org.yourteam.smartdashboard.widgets;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;

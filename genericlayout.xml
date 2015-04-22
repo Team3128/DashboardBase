@@ -1,6 +1,6 @@
 <xml version="1.0">
 <dashboard>
-	<static-widget class="org.yourteam.smartdashboard.widets.HeaderImage">
+	<static-widget class="org.yourteam.smartdashboard.widgets.HeaderImage">
 		<location x="263" y="0"/>
 	</static-widget>
 </dashboard>
