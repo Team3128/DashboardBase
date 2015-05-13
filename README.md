@@ -13,10 +13,8 @@ This repository is a starting point for teams wishing to make their own plugins 
 ### Writing Code
 ##### Getting Started
 1. Rename the provided package to your team's.  
-2. Subclass StaticWidget (for objects that do not communicate with the robot) and Widget (for objects that do communicate with the robot) to create custom GUI controls.
-3. They should be automagically found by SmartDashboard once it loads your team's plugin.  
-4. Rename the project to whatever you like
-5. Change the JarName property at the top of build.xml to match it. 
+2. Subclass StaticWidget (for objects that do not communicate with the robot) and Widget (for objects that do communicate with the robot) to create custom GUI controls.  They should be automagically found by SmartDashboard once it loads your team's plugin.  
+3. Rename the project to whatever you like.  Change the JarName property at the top of build.xml to match the new name. 
 
 Prior to the 2015 season, there was a wiki page about writing SmartDashboard plugins on WPI's TeamForge.  Unfortuantely, that wiki seems to have been erased by TeamForge's (rubbish) upgrade of their software, and the Wayback Machine was disabled by robots.txt.  So, now there is no official documentation whatsoever.
 
