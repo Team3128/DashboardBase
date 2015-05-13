@@ -1,9 +1,9 @@
 # SmartDashboard SDK
-This repository is a starting point for teams wishing to make their own plugins for the FRC Smart Dashboard.  It uses an ant script to automate building and deployment of the code.  It also comes with a copy of the decompiled SmartDashboard source for ease of debugging and learning.
+This repository is a starting point for teams wishing to make their own plugins for the FRC Smart Dashboard.  It uses an ant script to automate the building and deploying of the code.  It comes with a copy of the decompiled SmartDashboard source for ease of debugging and learning.
 
 ### Setup
 1. On a computer with the WPILib java SDK installed to `%userprofile%/wpilib` (it should get installed by the Eclipse FRC java plugin), clone this repository and import it with Eclipse JDK.
-2. In eclipse, go to File -> Import... -> Run/Debug -> Launch Configurations.  Hit next.
+2. In Eclipse, go to File -> Import... -> Run/Debug -> Launch Configurations.  Hit next.
 3. Hit the Browse... button at the top, and select the Launch Configurations folder inside the cloned repo.
 4. Check all of the .launch files, and hit finish.
 5. Use the External Tools menu (click the arrow next to the play button with a toolbox) to launch the `DashboardBase Ant Build` configuration.
@@ -12,13 +12,13 @@ This repository is a starting point for teams wishing to make their own plugins 
 
 ### Writing Code
 ##### Getting Started
-- Rename the provided package to your team's.  
-- Subclass StaticWidget (for objects that do not communicate with the robot) and Widget (for objects that do communicate with the robot) to create custom GUI controls.
-- They should be automagically found by SmartDashboard once it loads your team's plugin.  
-- Rename the project to whatever you like
-- Change the JarName property at the top of build.xml to match it. 
+1. Rename the provided package to your team's.  
+2. Subclass StaticWidget (for objects that do not communicate with the robot) and Widget (for objects that do communicate with the robot) to create custom GUI controls.
+3. They should be automagically found by SmartDashboard once it loads your team's plugin.  
+4. Rename the project to whatever you like
+5. Change the JarName property at the top of build.xml to match it. 
 
-Prior to the 2015 season, there was a wiki page about writing SmartDashboard plugins on WPI's TeamForge.  Unfortuantely, that wiki seems to have been erased by TeamForge's (rubbish) upgrade of their software, and the Wayback Machine was disabled by robots.txt.  So, now thre is no official documentation whatsoever.
+Prior to the 2015 season, there was a wiki page about writing SmartDashboard plugins on WPI's TeamForge.  Unfortuantely, that wiki seems to have been erased by TeamForge's (rubbish) upgrade of their software, and the Wayback Machine was disabled by robots.txt.  So, now there is no official documentation whatsoever.
 
 To install the plugin on your drive computer, either clone the repository and run it once from eclipse, or copy the built jar from the install subdirectory in the project to %userprofile%/SmartDashboard/extensions on the drive pc.
 
